@@ -5,7 +5,7 @@ Rails.application.routes.draw do
     namespace :v1 do
 
       # event routing
-      get '/events', to: 'event#test'
+      get 'events/', to: 'event#test'
 
       # avatar routing
 
@@ -24,7 +24,7 @@ Rails.application.routes.draw do
 
       # tumor routing
 
-      
+
       # freckle routing
 
 
