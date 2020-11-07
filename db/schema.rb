@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_07_021725) do
+ActiveRecord::Schema.define(version: 2020_11_07_032728) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -52,8 +52,28 @@ ActiveRecord::Schema.define(version: 2020_11_07_021725) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "freckles", force: :cascade do |t|
+    t.integer "marker_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "intensities", force: :cascade do |t|
     t.string "intensity_name"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "markers", force: :cascade do |t|
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "tumors", force: :cascade do |t|
+    t.integer "marker_id"
+    t.boolean "has_dimensions"
+    t.integer "diameter"
+    t.integer "estimated_weight"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
@@ -63,6 +83,14 @@ ActiveRecord::Schema.define(version: 2020_11_07_021725) do
     t.integer "user_id"
     t.integer "severity"
     t.date "diagnosis_date"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_markers", force: :cascade do |t|
+    t.integer "marker_id"
+    t.integer "user_id"
+    t.integer "body_location_id"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
