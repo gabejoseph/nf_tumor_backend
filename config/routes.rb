@@ -19,6 +19,15 @@ Rails.application.routes.draw do
       # disease routing
 
 
+      # marker routing
+
+
+      # tumor routing
+
+      
+      # freckle routing
+
+
       # auth routing
       post '/login', to: 'auth#login'
       post '/register', to: 'auth#register'
