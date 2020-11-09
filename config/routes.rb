@@ -15,6 +15,9 @@ Rails.application.routes.draw do
 
       # user routing
 
+      resources :users
+      resources :sessions, only: [:create]
+      resources :registrations, only: [:create]
 
       # disease routing
 

@@ -12,9 +12,6 @@
 
 ActiveRecord::Schema.define(version: 2020_11_07_032728) do
 
-  # These are extensions that must be enabled in order to support this database
-  enable_extension "plpgsql"
-
   create_table "avatars", force: :cascade do |t|
     t.string "avatar_name"
     t.date "a_birthdate"
@@ -101,6 +98,10 @@ ActiveRecord::Schema.define(version: 2020_11_07_032728) do
     t.integer "height"
     t.integer "weight"
     t.integer "zip_code"
+    t.string "name"
+    t.string "username"
+    t.string "email"
+    t.string "password_digest"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
