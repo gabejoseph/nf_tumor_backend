@@ -32,8 +32,8 @@ Rails.application.routes.draw do
 
 
       # auth routing
-      post '/login', to: 'auth#login'
-      post '/register', to: 'auth#register'
+      # post '/login', to: 'auth#login'
+      # post '/register', to: 'auth#register'
 
     end
   end
