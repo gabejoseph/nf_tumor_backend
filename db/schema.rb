@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2020_11_07_032728) do
+ActiveRecord::Schema.define(version: 2020_11_11_154240) do
 
   create_table "avatars", force: :cascade do |t|
     t.string "avatar_name"
@@ -66,6 +66,23 @@ ActiveRecord::Schema.define(version: 2020_11_07_032728) do
     t.datetime "updated_at", precision: 6, null: false
   end
 
+  create_table "symptoms", force: :cascade do |t|
+    t.string "name"
+    t.boolean "target"
+    t.string "description"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "symptoms_relation", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "symptom_id"
+    t.integer "target_condition_id"
+    t.float "phi_correlation"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
   create_table "tumors", force: :cascade do |t|
     t.integer "marker_id"
     t.boolean "has_dimensions"
@@ -88,6 +105,14 @@ ActiveRecord::Schema.define(version: 2020_11_07_032728) do
     t.integer "marker_id"
     t.integer "user_id"
     t.integer "body_location_id"
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+  end
+
+  create_table "user_symptoms", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "symptom_id"
+    t.boolean "current"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
   end
