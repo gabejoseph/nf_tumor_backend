@@ -85,11 +85,11 @@ test:
 #     url: <%= ENV['DATABASE_URL'] %>
 #
 production:
-  <<: *default
-    #database: happy_couple_production
-    #username: happy_couple
-    #password: <%= ENV['HAPPY_COUPLE_DATABASE_PASSWORD'] %>
-  database: <%= ENV['POSTGRES_DB'] %>
+  adapter: postgresql
+  database: app-dev
+  username: user
+  password: password
+  host: localhost
 
 
 
