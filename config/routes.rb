@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   resources :users
   resources :sessions, only: [:create]
   resources :registrations, only: [:create]
+  post '/logresult', to: 'api#logresult'
 
   namespace :api do
     namespace :v1 do
